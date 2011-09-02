@@ -1,0 +1,79 @@
+<small>
+<%= link_to 'Control Panel', root_path %> <<
+<%= link_to 'Client Manager', clients_path %> <<
+<%= @client.name %>
+</small>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <h1><%= @client.name %></h1>
+</p>
+
+<p>
+<table border="1" cellpadding="4">
+<tr>
+  <td colspan="2" style="text-align:left"><i>Personal Info</i></th>
+  <td colspan="2" style="text-align:left"><i>Contact Info</i></th>
+</tr>
+<tr>
+	<td><b>Date of birth:</b></td>
+	<td><%= @client.DOB %></td>
+	<td><b>Phone:</b></td>
+    <td><%= @client.phone %></td>
+</tr>
+<tr>
+  <td><b>Sport(s):</b></td>
+  <td><%= @client.sports %></td>
+  <td><b>Email:</b></td>
+  <td><%= @client.email %></td>
+</tr>
+<tr>
+  <td><b>School:</b></td>
+  <td><%= @client.school %></td>
+  <td rowspan="2" style="vertical-align:top"><b>Address:</b></td>
+  <td rowspan="2" style="vertical-align:top"><%= @client.address %></td>
+</tr>
+<tr>
+  <td><b>Member since:</b></td>
+  <td><%= @client.date_started %></td>
+</tr>
+</table>
+</p>
+<p>
+<%= link_to 'Edit Client Details', edit_client_path(@client) %>
+</p>
+<br />
+<p>
+<h2>Progress Logs</h2>
+
+<table border="1" cellpadding="4">
+<tr style="text-align:left" cellspacing="0">
+	<th cellspacing="10">Date</th>
+	<th>Weight(lbs)</th>
+	<th>Lean Mass(lbs)</th>
+	<th>Body Fat %</th>
+	<th></th>
+	<th></th>
+</tr>
+<% @client.logs.each do |log| %>
+<tr style="text-align:right" cellspacing="0">
+	<td><%= link_to log.log_date, client_log_path(@client, log) %></td>
+	<td><%= number_with_precision(log.weight, :precision => 1) %></td>
+	<td><%= number_with_precision(log.LBM, :precision => 1) %></td>
+	<td><%= number_with_precision(log.body_fat, :precision => 1) %></td>
+    <td><%= link_to 'Edit', edit_client_log_path(@client, log) %></td>
+    <td><%= link_to 'Delete', client_log_path(@client, log), :confirm => 'Delete this log?', :method => :delete %></td>
+</tr>
+<% end %>
+</table>
+</p>
+
+<p>
+<%= link_to 'New Progress Log', new_client_log_path(@client) %>
+</p>
+
+<p><center>
+<%= link_to 'Control Panel', root_path %> |
+<%= link_to 'Client Manager', clients_path %>
+</center></p>

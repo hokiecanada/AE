@@ -1,0 +1,212 @@
+<small>
+<%= link_to 'Control Panel', root_path %> <<
+<%= link_to 'Client Manager', clients_path %> <<
+<%= link_to @client.name, client_path(@client) %> <<
+Progress Log Details
+</small>
+
+<p id="notice"><%= notice %></p>
+<p>
+<h1>Progress Log</h1>
+</p>
+
+<table>
+  <tr><h3>Basic Details:</h3></tr>
+  <tr>
+	<td>
+		<table border="1">
+		  <tr>
+			<td><i>Log Date:</i></td>
+			<td><%= @log.log_date %></td>
+		  </tr>
+		  <tr>
+			<td><i>Height:</i></td>
+			<td><%= number_with_precision(@log.height, :precision => 1) %></td>
+		  </tr>
+		  <tr>
+			<td><i>Age:</i></td>
+			<td><%= @log.age %></td>
+		  </tr>
+		  <tr>
+			<td><i>Weight:</i></td>
+			<td><%= number_with_precision(@log.weight, :precision => 1) %></td>
+		  </tr>
+		  <tr>
+			<td><i>Heart Rate:</i></td>
+			<td><%= @log.RHR %></td>
+		  </tr>
+		</table>
+	</td>
+	<td>
+		<table border="1">
+		  <tr>
+			<td><i>Body Fat %:</i></td>
+			<td><%= number_with_precision(@log.body_fat, :precision => 1) %>%</td>
+		  </tr>
+		  <tr>
+			<td><i>Lean Body Mass:</i></td>
+			<td><%= number_with_precision(@log.LBM, :precision => 1) %> lbs</td>
+		  </tr>
+		  <tr>
+			<td><i>Body Mass Index:</i></td>
+			<td><%= number_with_precision(@log.BMI, :precision => 1) %></td>
+		  </tr>
+		  <tr>
+			<td><i>Basal Metabolic Rate:</i></td>
+			<td><%= @log.BMR %> kCal</td>
+		  </tr>
+		  <tr>
+			<td><i>Total Daily Energy Expenditure:</i></td>
+			<td><%= @log.TDEE %> kCal</td>
+		  </tr>
+		</table>
+	</td>
+  </tr>
+</table>
+
+  <br />
+  <table>
+    <tr><h3>Body Measurements:</h3></tr>
+  <tr>
+  <td>
+	  <table cellpadding="4" border="1">
+	  <tr>
+		<td>Neck:</td>
+		<td><%= @log.m_neck %></td>
+
+	  </tr>
+	  <tr>
+		<td>Shoulders:</td>
+		<td><%= @log.m_shoulders %></td>
+	  </tr>
+	  <tr>
+		<td>Chest:</td>
+		<td><%= @log.m_chest %>"</td>
+	  </tr>
+	  <tr>
+		<td>Waist:</td>
+		<td><%= @log.m_waist %>"</td>	
+	  </tr>
+	  <tr>
+		<td>Hips:</td>
+		<td><%= @log.m_hips %>"</td>
+	  </tr>
+	  </table>
+  </td>
+  <td style="vertical-align:top">
+	  <table cellpadding="4" border="1">
+	  <tr>
+		<td></td>
+		<td><center><i>Right</i></center></td>
+		<td><center><i>Left</i></center></td>
+		<td></td>
+		<td><center><i>Right</i></center></td>
+		<td><center><i>Left</i></center></td>
+	  </tr>
+	  <tr>
+		<td><i>Biceps (flexed):</i></td>
+		<td><%= @log.m_biceps_flex_r %>"</td>
+		<td><%= @log.m_biceps_flex_l %>"</td>
+		<td><i>Wrist:</i></td>
+		<td><%= @log.m_wrist_r %>"</td>
+		<td><%= @log.m_wrist_l %>"</td>
+	  </tr>
+	  <tr>
+		<td><i>Biceps (relaxed):</i></td>
+		<td><%= @log.m_biceps_relax_r %>"</td>
+		<td><%= @log.m_biceps_relax_l %>"</td>
+		<td><i>Thigh:</i></td>
+		<td><%= @log.m_thigh_r %>"</td>
+		<td><%= @log.m_thigh_l %>"</td>
+	  </tr>
+	  <tr>
+		<td><i>Forearm:</i></td>
+		<td><%= @log.m_forearm_r %>"</td>
+		<td><%= @log.m_forearm_l %>"</td>
+		<td><i>Calf:</i></td>
+		<td><%= @log.m_calf_r %>"</td>
+		<td><%= @log.m_calf_l %>"</td>
+	  </tr>
+	  </table>
+  </td>
+  </tr>
+  </table>
+  
+  <br />
+  <table border="1">
+  <tr><h3>Skinfold Measurements:</h3></tr>
+  <tr>
+	<td></td>
+	<td><center><i>1</i></center></td>
+	<td><center><i>2</i></center></td>
+	<td><center><i>3</i></center></td>
+  </tr>
+  <tr>
+	<td><i>Pectoral:</i></td>
+	<td><%= @log.s_pec1 %>mm</td>
+	<td><%= @log.s_pec2 %>mm</td>
+	<td><%= @log.s_pec3 %>mm</td>
+  </tr>
+  <tr>
+	<td><i>Abdominal:</i></td>
+	<td><%= @log.s_ab1 %>mm</td>
+	<td><%= @log.s_ab2 %>mm</td>
+	<td><%= @log.s_ab3 %>mm</td>
+  </tr>
+  <tr>
+	<td><i>Thigh:</i></td>
+	<td><%= @log.s_thigh1 %>mm</td>
+	<td><%= @log.s_thigh2 %>mm</td>
+	<td><%= @log.s_thigh3 %>mm</td>
+  </tr>
+  <tr>
+	<td><i>Tricep:</i></td>
+	<td><%= @log.s_tricep1 %>mm</td>
+	<td><%= @log.s_tricep2 %>mm</td>
+	<td><%= @log.s_tricep3 %>mm</td>
+  </tr>
+  <tr>
+	<td><i>Subscapular:</i></td>
+	<td><%= @log.s_sub1 %>mm</td>
+	<td><%= @log.s_sub2 %>mm</td>
+	<td><%= @log.s_sub3 %>mm</td>
+  </tr>
+  <tr>
+	<td><i>Suprailiac:</i></td>
+	<td><%= @log.s_sup1 %>mm</td>
+	<td><%= @log.s_sup2 %>mm</td>
+	<td><%= @log.s_sup3 %>mm</td>
+  </tr>
+  <tr>
+	<td><i>Axilla:</i></td>
+	<td><%= @log.s_ax1 %>mm</td>
+	<td><%= @log.s_ax2 %>mm</td>
+	<td><%= @log.s_ax3 %>mm</td>
+  </tr>
+  </table>
+  <br />
+  
+  <table border="1">
+  <tr><h3>Other:</h3></tr>
+  <tr>
+    <td style="vertical-align:top"><i>Goals:</i></td>
+    <td><%= @log.goals %></td>
+  </tr>
+  <tr>
+    <td style="vertical-align:top"><i>Reminders:</i></td>
+    <td><%= @log.reminders %></td>
+  </tr>
+  <tr>
+    <td style="vertical-align:top"><i>Notes:</i></td>
+    <td><%= @log.notes %></td>
+  </tr>
+</table>
+<p>
+<%= link_to 'Edit Log', edit_client_log_path(@client, @log) %>
+</p>
+
+<p><center>
+<%= link_to 'Control Panel', root_path %> |
+<%= link_to 'Client Manager', clients_path %> |
+<%= link_to @client.name, client_path(@client) %>
+</center></p>

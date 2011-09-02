@@ -1,0 +1,52 @@
+<%= form_for(@client) do |f| %>
+  <% if @client.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@client.errors.count, "error") %> prohibited this client from being saved:</h2>
+
+      <ul>
+      <% @client.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <table cellpadding="4" width="75%">
+  <tr>
+	<td>Date:</td>
+	<td><%= f.date_select :date_started %></td>
+  </tr>
+  <tr>
+	<td>Name:</td>
+	<td><%= f.text_field :name %></td>
+  </tr>
+  <tr>
+	<td style="vertical-align:top">Address:</td>
+	<td><%= f.text_area :address, :rows => 4 %></td>
+  </tr>
+  <tr>
+	<td>Phone:</td>
+	<td><%= f.text_field :phone %></td>
+  </tr>
+  <tr>
+	<td>Email:</td>
+	<td><%= f.text_field :email %></td>
+  </tr>
+  <tr>
+	<td>School:</td>
+	<td><%= f.text_field :school %></td>
+  </tr>
+  <tr>
+	<td>Sport(s):</td>
+	<td><%= f.text_field :sports %></td>
+  </tr>
+  <tr>
+	<td>Date of Birth:</td>
+	<td><%= f.date_select :DOB, :start_year => 1920 %></td>
+  </tr>
+</table>
+
+<p>
+<%= f.submit %>
+</p>
+<% end %>

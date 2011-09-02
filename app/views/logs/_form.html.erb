@@ -1,0 +1,175 @@
+<%= form_for([@client, @log]) do |f|  %>
+  <% if @log.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@log.errors.count, "error") %> prohibited this log from being saved:</h2>
+
+      <ul>
+      <% @log.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <table cellpadding="4">
+  <tr><h3><u>Basic Details</u></h3></tr>
+  <tr>
+	<td>Log Date:</td>
+    <td><%= f.date_select :log_date, :start_year => 2010 %></td>
+	<td>Height:</td>
+    <td><%= f.text_field :height, :size => 10 %></td>
+  </tr>
+  <tr>
+	<td>Age:</td>
+	<td><%= f.text_field :age, :size => 10 %>
+    <td>Weight:</td>
+    <td><%= f.text_field :weight, :size => 10 %></td>
+  </tr>
+  <tr>
+    <td>Heart Rate:</td>
+    <td><%= f.text_field :RHR, :size => 10 %></td>
+	<td></td>
+	<td></td>
+  </tr>
+  </table>
+  
+  <br />
+  <table cellpadding="4">
+  <tr><h3><u>Body Measurements (inches)</u></h3></tr>
+  <tr>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td><center>Right</center></td>
+	<td><center>Left</center></td>
+	<td></td>
+	<td></td>
+	<td><center>Right</center></td>
+	<td><center>Left</center></td>
+  </tr>
+  <tr>
+	<td>Neck:</td>
+	<td><%= f.text_field :m_neck, :size => 10 %></td>
+	<td></td>
+	<td>Biceps (flexed):</td>
+	<td><%= f.text_field :m_biceps_flex_r, :size => 10 %></td>
+	<td><%= f.text_field :m_biceps_flex_l, :size => 10 %></td>
+	<td></td>
+	<td>Wrist:</td>
+	<td><%= f.text_field :m_wrist_r, :size => 10 %></td>
+	<td><%= f.text_field :m_wrist_l, :size => 10 %></td>
+  </tr>
+  <tr>
+	<td>Shoulders:</td>
+	<td><%= f.text_field :m_shoulders, :size => 10 %></td>
+	<td></td>
+	<td>Biceps (relaxed):</td>
+	<td><%= f.text_field :m_biceps_relax_r, :size => 10 %></td>
+	<td><%= f.text_field :m_biceps_relax_l, :size => 10 %></td>
+	<td></td>
+	<td>Thigh:</td>
+	<td><%= f.text_field :m_thigh_r, :size => 10 %></td>
+	<td><%= f.text_field :m_thigh_l, :size => 10 %></td>
+  </tr>
+  <tr>
+	<td>Chest:</td>
+	<td><%= f.text_field :m_chest, :size => 10 %></td>
+	<td></td>
+	<td>Forearm:</td>
+	<td><%= f.text_field :m_forearm_r, :size => 10 %></td>
+	<td><%= f.text_field :m_forearm_l, :size => 10 %></td>
+	<td></td>
+	<td>Calf:</td>
+	<td><%= f.text_field :m_calf_r, :size => 10 %></td>
+	<td><%= f.text_field :m_calf_l, :size => 10 %></td>
+  </tr>
+  <tr>
+	<td>Waist:</td>
+	<td><%= f.text_field :m_waist, :size => 10 %></td>	
+  </tr>
+  <tr>
+	<td>Hips:</td>
+	<td><%= f.text_field :m_hips, :size => 10 %></td>
+  </tr>
+  </table>
+  
+  <br />
+  <table cellpadding="4">
+  <tr><h3><u>Skinfold Measurements (mm)</u></h3></tr>
+  <tr>
+	<td></td>
+	<td><center>1</center></td>
+	<td><center>2</center></td>
+	<td><center>3</center></td>
+  </tr>
+  <tr>
+	<td>Pectoral:</td>
+	<td><%= f.text_field :s_pec1, :size => 10 %></td>
+	<td><%= f.text_field :s_pec2, :size => 10 %></td>
+	<td><%= f.text_field :s_pec3, :size => 10 %></td>
+  </tr>
+  <tr>
+	<td>Abdominal:</td>
+	<td><%= f.text_field :s_ab1, :size => 10 %></td>
+	<td><%= f.text_field :s_ab2, :size => 10 %></td>
+	<td><%= f.text_field :s_ab3, :size => 10 %></td>
+  </tr>
+  <tr>
+	<td>Thigh:</td>
+	<td><%= f.text_field :s_thigh1, :size => 10 %></td>
+	<td><%= f.text_field :s_thigh2, :size => 10 %></td>
+	<td><%= f.text_field :s_thigh3, :size => 10 %></td>
+  </tr>
+  <tr>
+	<td>Tricep:</td>
+	<td><%= f.text_field :s_tricep1, :size => 10 %></td>
+	<td><%= f.text_field :s_tricep2, :size => 10 %></td>
+	<td><%= f.text_field :s_tricep3, :size => 10 %></td>
+  </tr>
+  <tr>
+	<td>Subscapular:</td>
+	<td><%= f.text_field :s_sub1, :size => 10 %></td>
+	<td><%= f.text_field :s_sub2, :size => 10 %></td>
+	<td><%= f.text_field :s_sub3, :size => 10 %></td>
+  </tr>
+  <tr>
+	<td>Suprailiac:</td>
+	<td><%= f.text_field :s_sup1, :size => 10 %></td>
+	<td><%= f.text_field :s_sup2, :size => 10 %></td>
+	<td><%= f.text_field :s_sup3, :size => 10 %></td>
+  </tr>
+  <tr>
+	<td>Axilla:</td>
+	<td><%= f.text_field :s_ax1, :size => 10 %></td>
+	<td><%= f.text_field :s_ax2, :size => 10 %></td>
+	<td><%= f.text_field :s_ax3, :size => 10 %></td>
+  </tr>
+  </table>
+  <br />
+  
+  <table cellpadding="4">
+  <tr><h3><u>Other</u></h3></tr>
+  <tr>
+    <td style="vertical-align:top">Goals:</td>
+    <td><%= f.text_area :goals, :cols => 60, :rows => 3 %></td>
+  </tr>
+  <tr>
+    <td style="vertical-align:top">Reminders:</td>
+    <td><%= f.text_area :reminders, :cols => 60, :rows => 3 %></td>
+  </tr>
+  <tr>
+    <td style="vertical-align:top">Notes:</td>
+    <td><%= f.text_area :notes, :cols => 60, :rows => 3 %></td>
+  </tr>
+</table>  
+
+<p>
+<%= f.submit %>
+</p>
+	
+<% end %> 
+
+
+
+

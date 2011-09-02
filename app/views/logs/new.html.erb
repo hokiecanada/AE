@@ -1,0 +1,16 @@
+<small>
+<%= link_to 'Control Panel', root_path %> <<
+<%= link_to 'Client Manager', clients_path %> <<
+<%= link_to @client.name, client_path(@client) %> <<
+New Progress Log
+</small>
+
+<h1>New Progress Log</h1>
+
+<%= render 'form' %>
+
+<p><center>
+<%= link_to 'Control Panel', root_path %> |
+<%= link_to 'Client Manager', clients_path %> |
+<%= link_to @client.name, client_path(@client) %>
+</center></p>

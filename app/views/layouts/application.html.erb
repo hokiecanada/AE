@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<title>Athlete's Edge</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="Description" content="elite nutritional program" />
+	<meta name="Keywords" content="athlete, nutrition" />
+	<%= stylesheet_link_tag :all %>
+	<%= javascript_include_tag :defaults %>
+	<%= csrf_meta_tag %>
+	
+	<script type="text/javascript">
+		function show_program() {
+			$('#program').style.display = 'inline';
+			$('#how').style.display = 'none';
+		}
+		function show_how() {
+			$('#program').style.display = 'none';
+			$('#how').style.display = 'inline';
+		}	
+	</script>
+</head> 
+
+<body>
+<div id="container">
+
+	<div id="leftcolumn">
+		<img src="images/man.png" style="height: 250px" alt="leftbody" />
+	</div>
+
+	<div id="banner">
+		<img src="images/banner.png" id="banner" alt="banner" />
+	</div>
+	
+	<div id="navigation">
+		<% link_to home_path do %>Home<% end %>
+		<% link_to program_path do %>The Program<% end %>
+		<% link_to pricing_path do %>Pricing<% end %>
+		<% link_to camps_path do %>Camps<% end %>
+		<% link_to signup_path do %>Sign Up!<% end %>
+	</div>
+	
+	<div id="contents">
+		<%= yield %>
+		
+		<img src="images/woman.png" style="position: absolute; height: 350px; right: -150px; bottom: -66px" alt="rightbody" />
+	</div>
+	
+	<div id="footer">
+		<% link_to home_path do %>Home<% end %> | 
+		<% link_to program_path do %>The Program<% end %> | 
+		<% link_to pricing_path do %>Pricing<% end %> | 
+		<% link_to camps_path do %>Camps<% end %> | 
+		<% link_to signup_path do %>Sign Up!<% end %> | 
+		<p><small>Copyright 2011 Athlete's Edge Program</small><br /><br /></p>
+	</div>
+</div>
+</body>
+</html>
