@@ -41,7 +41,7 @@ hr {
   height: 3px;
 }
 #container {
-  width: 1000px;
+  width: 1200px;
   min-height: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -63,19 +63,19 @@ hr {
 }
 #banner {
   display: inline;
-  width: 700px;
+  width: 900px;
   padding: 0px;
 }
 #banner img{
-  max-width: 800px;
+  max-width: 1000px;
   padding: 0px;
   border: none;
 }
 #navigation {	
 }
 #navigation a {
-	background: url('/images/btn.png');
-	width: 127px;
+	background: url('/images/btn2.png');
+	width: 115px;
 	height: 20px;
 	padding: 5px;
 	margin-top: 5px;
@@ -90,8 +90,8 @@ hr {
 	text-decoration: none;
 }
 #contents {
-  background: url('/images/metal.png');
-  width: 660px;
+  background: url('/images/metal2.png');
+  width: 860px;
   height: 460px;
   margin-left: 150px;
   position: relative;

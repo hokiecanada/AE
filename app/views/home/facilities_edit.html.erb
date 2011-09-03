@@ -1,0 +1,9 @@
+<%= form_for @html, :url=> html_edit_path(@html) do |f| %>
+	<%= hidden_field_tag "redirect", "facilities" %>
+	<div class="field">
+		<%= f.text_area :facilities, :cols => 78, :rows => 26 %>
+	</div>
+	<div class="actions">
+		<%= f.submit "Save" %>
+	</div>
+<% end %>

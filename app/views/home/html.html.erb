@@ -1,0 +1,10 @@
+<%= form_for Html.new do |f| %>
+	<% f.error_messages %>
+
+	<div class="field">
+		<%= f.text_area :home, :cols => 78, :rows => 26 %>
+	</div>
+	<div class="actions">
+		<%= f.submit "Create" %>
+	</div>
+<% end %>
